@@ -109,7 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143cbad7d72bad04a934f44c4ed09d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  maxHealth: 3
   resistance: 0
+  speed: 5
+  wallDetectDis: 1
+  sideDis: 5
   col: {fileID: 6839502507777309512}
   deathParticlePrefab: {fileID: 1522482562363039722, guid: 7b614a426c6cc9244914b80c880dc120, type: 3}
+  spawnPos: {x: 0, y: 0, z: 0}

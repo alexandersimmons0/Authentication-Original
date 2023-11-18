@@ -29,7 +29,7 @@ public class Leaderboard : MonoBehaviour
         );
     }
 
-    void UpdateLeaderboardUI(List<PlayerLeaderboardEntry> leaderboard){
+    public void UpdateLeaderboardUI(List<PlayerLeaderboardEntry> leaderboard){
         for (int x = 0; x < leaderboardEntries.Length; x++){
             leaderboardEntries[x].SetActive(x < leaderboard.Count);
             if (x >= leaderboard.Count) continue;

@@ -8,6 +8,7 @@ using PlayFab.ClientModels;
 public class PlayerInfo : MonoBehaviour{
     public GameObject loginScreen;
     public GameObject welcomeScreen;
+    public GameObject leaderboard;
     public TextMeshProUGUI welcomeText;
     [HideInInspector]
     public PlayerProfileModel profile;
@@ -23,9 +24,9 @@ public class PlayerInfo : MonoBehaviour{
                 ShowDisplayName = true
             },
         };
-        loginScreen.SetActive(false);
         PlayFabClientAPI.GetPlayerProfile(getProfileRequest,
             result => {
+                loginScreen.SetActive(false);
                 profile = result.PlayerProfile;
                 Invoke("ProfileLoaded", 0f);
                 Debug.Log("Loaded in player: " + profile.DisplayName);
@@ -36,6 +37,8 @@ public class PlayerInfo : MonoBehaviour{
     
     void ProfileLoaded(){
         welcomeScreen.SetActive(true);
+        leaderboard.SetActive(true);
+        GetComponent<Leaderboard>().DisplayLeaderboard();
         welcomeText.text = "Welcome " + profile.DisplayName;
     }           
 }
